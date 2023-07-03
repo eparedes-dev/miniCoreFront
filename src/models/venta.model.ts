@@ -1,7 +1,7 @@
 export interface vendedor{
     id: number;
     fecha: string;
-    vendedorId: number;
+    nombre_vendedor: number;
     producto: string;
     monto: number;
 }
