@@ -1,1 +1,33 @@
-<p>home works!</p>
+<h1>Ventas por Fecha</h1>
+<input type="date" [(ngModel)]="fechaInicio">
+<input type="date" [(ngModel)]="fechaFin">
+<button (click)="obtenerVentasPorFecha()">Obtener Ventas</button>
+
+<table *ngIf="ventas.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fecha</th>
+      <th>Nombre Vendedor</th>
+      <th>Producto</th>
+      <th>Monto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let venta of ventas">
+      <td>{{ venta.id }}</td>
+      <td>{{ venta.fecha }}</td>
+      <td>{{ venta.nombre_vendedor }}</td>
+      <td>{{ venta.producto }}</td>
+      <td>{{ venta.monto }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">Monto Total:</td>
+      <td>{{ montoTotal }}</td>
+    </tr>
+  </tfoot>
+</table>
+
+<p *ngIf="ventas.length === 0">No se encontraron ventas en el rango de fechas seleccionado.</p>
