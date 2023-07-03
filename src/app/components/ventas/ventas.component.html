@@ -1,1 +1,27 @@
-<p>ventas works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Vendedor</th>
+            <th>Producto</th>
+            <th>Monto</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let venta of ventas">
+            <td>{{ venta.id }}</td>
+            <td>{{ venta.fecha }}</td>
+            <td>{{ venta.vendedorId }}</td>
+            <td>{{ venta.producto }}</td>
+            <td>{{ venta.monto }}</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
